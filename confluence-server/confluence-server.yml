@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-nginx
+  name: confluence-server
 spec:
   selector:
     matchLabels:
-      run: my-nginx
+      run: confluence-server
   replicas: 1
   template:
     metadata:
       labels:
-        run: my-nginx
+        run: confluence-server
     spec:
       containers:
-      - name: my-nginx
+      - name: confluence-server
         image: atlassian/confluence-server
         ports:
         - containerPort: 8090
